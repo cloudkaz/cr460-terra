@@ -112,7 +112,7 @@ resource "google_compute_firewall" "backend-mgmt" {
 }
 
 // ==============================================
-// DNS records for jumphost
+// DNS record for jumphost
 // ==============================================
 resource "google_dns_record_set" "jump" {
   name = "jump.aminkazoura.cr460lab.com."
@@ -123,7 +123,7 @@ resource "google_dns_record_set" "jump" {
 }
 
 // ==============================================
-// DNS records for vault
+// DNS record for vault
 // ==============================================
 
 resource "google_dns_record_set" "vault" {
