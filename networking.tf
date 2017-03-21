@@ -1,8 +1,8 @@
 // ==============================================
-// Main network for cr460 class
+// Main network cr460
 // ==============================================
 resource "google_compute_network" "cr460" {
-  name					          = "cr460"
+  name = "cr460"
   auto_create_subnetworks = "false"
 }
 
@@ -10,14 +10,14 @@ resource "google_compute_network" "cr460" {
 // Public web network
 // ==============================================
 resource "google_compute_subnetwork" "public" {
-  name				  = "public"
+  name = "public"
   ip_cidr_range = "172.16.1.0/24"
-  network			  = "${google_compute_network.cr460.self_link}"
-  region        = "us-east1"
+  network = "${google_compute_network.cr460.self_link}"
+  region  = "us-east1"
 }
 
 // ==============================================
-// Workload network for cr460 class
+// Workload network
 // ==============================================
 resource "google_compute_subnetwork" "workload" {
   name          = "workload"
@@ -27,7 +27,7 @@ resource "google_compute_subnetwork" "workload" {
 }
 
 // ==============================================
-// Backend network for cr460 class
+// Backend network
 // ==============================================
 resource "google_compute_subnetwork" "backend" {
   name          = "backend"
