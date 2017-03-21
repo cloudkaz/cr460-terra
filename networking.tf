@@ -7,7 +7,7 @@ resource "google_compute_network" "cr460" {
 }
 
 // ==============================================
-// Public web network
+// Public network (web & mgmt)
 // ==============================================
 resource "google_compute_subnetwork" "public" {
   name = "public"
