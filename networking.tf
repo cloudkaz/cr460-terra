@@ -112,7 +112,7 @@ resource "google_compute_firewall" "backend-mgmt" {
 }
 
 // ==============================================
-// DNS records for cr460 class (jump & vault)
+// DNS records for jumphost
 // ==============================================
 resource "google_dns_record_set" "jump" {
   name = "jump.aminkazoura.cr460lab.com."
@@ -121,6 +121,10 @@ resource "google_dns_record_set" "jump" {
   managed_zone = "aminkazoura-cr460"
   rrdatas = ["${google_compute_instance.jumphost.network_interface.0.access_config.0.assigned_nat_ip}"]
 }
+
+// ==============================================
+// DNS records for vault
+// ==============================================
 
 resource "google_dns_record_set" "vault" {
   name = "vault.aminkazoura.cr460lab.com."
