@@ -1,5 +1,5 @@
 // ==============================================
-// Instance: jumphost on debian-8 on public subnetwork
+// Instance: jumphost debian-8 on public subnetwork
 // ==============================================
 resource "google_compute_instance" "jumphost" {
 name          = "jumphost"
@@ -19,7 +19,7 @@ network_interface {
 }
 
 // ==============================================
-// Instance: Vault on CoreOS & apache2 on public subnetwork
+// Instance: Vault CoreOS/apache2 on public subnetwork
 // ==============================================
 resource "google_compute_instance" "vault" {
 name          = "vault"
@@ -41,7 +41,7 @@ metadata_startup_script = "apt-get -y install apache2 && systemctl start apache2
 }
 
 // ==============================================
-// Instance: Master debian-8 on backend subnetwork
+// Instance: Master CoreOS on backend subnetwork
 // ==============================================
 resource "google_compute_instance" "master" {
 name          = "master"
@@ -61,7 +61,7 @@ network_interface {
 }
 
 // ==============================================
-// Instance: etcd1 debian-8 on backend subnetwork
+// Instance: etcd1 CoreOS on backend subnetwork
 // ==============================================
 resource "google_compute_instance" "etcd1" {
 name          = "etcd1"
@@ -81,7 +81,7 @@ network_interface {
 }
 
 // ==============================================
-// Instance: etcd2 debian-8 on backend subnetwork
+// Instance: etcd2 CoreOS on backend subnetwork
 // ==============================================
 resource "google_compute_instance" "etcd2" {
 name          = "etcd2"
@@ -101,7 +101,7 @@ network_interface {
 }
 
 // ==============================================
-// Instance: etcd3 debian-8 on backend subnetwork
+// Instance: etcd3 CoreOS on backend subnetwork
 // ==============================================
 resource "google_compute_instance" "etcd3" {
 name          = "etcd3"
