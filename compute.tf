@@ -56,7 +56,6 @@ disk {
 
 network_interface {
   subnetwork = "${google_compute_subnetwork.backend.name}"
-  access_config {}
     }
 }
 
@@ -76,7 +75,6 @@ disk {
 
 network_interface {
   subnetwork = "${google_compute_subnetwork.backend.name}"
-  access_config {}
     }
 }
 
@@ -96,7 +94,6 @@ disk {
 
 network_interface {
   subnetwork = "${google_compute_subnetwork.backend.name}"
-  access_config {}
     }
 }
 
@@ -116,7 +113,6 @@ disk {
 
 network_interface {
   subnetwork = "${google_compute_subnetwork.backend.name}"
-  access_config {}
     }
 }
 
