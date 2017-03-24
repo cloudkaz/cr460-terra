@@ -43,16 +43,15 @@ resource "google_compute_firewall" "public-mgmt" {
   name = "public-mgmt"
   network = "${google_compute_network.cr460.name}"
 
-  allow {
-    protocol = "icmp"
-  }
+  // Used for testing connectivity
+  //  allow {protocol = "icmp"}
 
   allow {
     protocol = "tcp"
     ports = ["22"]
     }
     source_ranges = ["0.0.0.0/0"]
-//    source_tags = ["public-mgmt"]
+    source_tags = ["public-mgmt"]
 }
 
 // ==============================================
@@ -61,16 +60,16 @@ resource "google_compute_firewall" "public-mgmt" {
 resource "google_compute_firewall" "public-web" {
   name = "public-web"
   network = "${google_compute_network.cr460.name}"
-  allow {
-    protocol = "icmp"
-  }
+
+  // Used for testing connectivity
+  //  allow {protocol = "icmp"}
 
   allow {
     protocol = "tcp"
     ports = ["80", "443"]
     }
     source_ranges = ["0.0.0.0/0"]
-//    source_tags = ["public-web"]
+    source_tags = ["public-web"]
 }
 
 // ==============================================
@@ -80,16 +79,15 @@ resource "google_compute_firewall" "workload-mgmt" {
   name = "workload-mgmt"
   network = "${google_compute_network.cr460.name}"
 
-  allow {
-    protocol = "icmp"
-  }
+// Used for testing connectivity
+//  allow {protocol = "icmp"}
 
   allow {
     protocol = "tcp"
     ports = ["22"]
     }
     source_ranges = ["${google_compute_subnetwork.public.ip_cidr_range}"]
-//    source_tags = ["workload-mgmt"]
+    source_tags = ["workload-mgmt"]
 }
 
 // ==============================================
@@ -99,16 +97,14 @@ resource "google_compute_firewall" "backend-mgmt" {
   name = "backend-mgmt"
   network = "${google_compute_network.cr460.name}"
 
-  allow {
-    protocol = "icmp"
-  }
+  // Used for testing connectivity
+  //  allow {protocol = "icmp"}
 
   allow {
     protocol = "tcp"
     ports = ["22", "2379", "2380"]
     }
     source_ranges = ["${google_compute_subnetwork.public.ip_cidr_range}", "${google_compute_subnetwork.workload.ip_cidr_range}"]
-//    source_tags = ["backend-mgmt"]
 }
 
 // ==============================================

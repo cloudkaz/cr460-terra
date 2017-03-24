@@ -47,7 +47,7 @@ resource "google_compute_instance" "master" {
 name          = "master"
 machine_type  = "f1-micro"
 zone          = "us-east1-b"
-tags          = ["workload-mgmt"]
+// tags          = ["workload-mgmt"]
 
 disk {
   image = "coreos-cloud/coreos-stable"
@@ -66,7 +66,7 @@ resource "google_compute_instance" "etcd1" {
 name          = "etcd1"
 machine_type  = "f1-micro"
 zone          = "us-east1-b"
-tags          = ["backend-mgmt"]
+// tags          = ["backend-mgmt"]
 
 disk {
   image = "coreos-cloud/coreos-stable"
@@ -85,7 +85,7 @@ resource "google_compute_instance" "etcd2" {
 name          = "etcd2"
 machine_type  = "f1-micro"
 zone          = "us-east1-b"
-tags          = ["backend-mgmt"]
+// tags          = ["backend-mgmt"]
 
 disk {
   image = "coreos-cloud/coreos-stable"
@@ -104,7 +104,7 @@ resource "google_compute_instance" "etcd3" {
 name          = "etcd3"
 machine_type  = "f1-micro"
 zone          = "us-east1-b"
-tags          = ["backend-mgmt"]
+// tags          = ["backend-mgmt"]
 
 disk {
   image = "coreos-cloud/coreos-stable"
@@ -124,7 +124,7 @@ resource "google_compute_instance_template" "worker-template" {
   description    = "worker instance template"
   machine_type   = "f1-micro"
   can_ip_forward = false
-  tags           = ["workload-mgmt"]
+//  tags           = ["workload-mgmt"]
 
   disk {
     source_image = "coreos-cloud/coreos-stable"
